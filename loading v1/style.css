@@ -1,0 +1,266 @@
+/* ============================================================
+   İstiklal RP - FiveM Loading Screen v2.0
+   Design: CodeLine & İstiklal Team
+   File: style.css (Oyun İçi Düzenlenmiş ve Optimize Edilmiş)
+   ============================================================ */
+
+/* --- Temel Reset ve Font Ayarları --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* FiveM uyumlu net font */
+    background-color: #000;
+    color: white;
+    user-select: none; /* Metin seçmeyi engeller */
+}
+
+#loading-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Panelleri üst-orta-alt olarak dağıtır */
+}
+
+/* --- FIX: TAM EKRAN KOD ARKA PLANI --- */
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* 'CD' logolu kod görseli: covers ile tam sığar, siyahlık kalmaz */
+    background: url('images/large_logo_bg.png') no-repeat center center / cover; 
+    z-index: 0;
+    /* Arka planı hafif karartarak panellerin okunurluğunu artırır */
+    filter: brightness(0.9);
+}
+
+/* --- Üst Bar (Logo ve İsim) --- */
+.top-bar {
+    position: relative;
+    z-index: 10; /* Arka planın üzerinde durur */
+    padding: 25px 45px; /* Biraz daha genişletildi */
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Logo ve yazı arası boşluk */
+}
+
+.header-logo img {
+    height: 40px; /* Logo biraz büyütüldü */
+    width: auto;
+}
+
+.server-name {
+    font-size: 26px; /* İsim boyutu artırıldı */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Orta Kısım (Arka plan cover olduğu için burası boşluktur) --- */
+.center-content {
+    flex: 1;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+/* HTML'deki eski konteyneri gizler */
+.large-logo-container {
+    display: none;
+}
+
+/* --- Alt Kısım: Paneller ve Sosyal Bar --- */
+.bottom-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between; /* Panelleri köşelere iter */
+    align-items: flex-end; /* Tabana hizalar */
+    padding: 0 45px 35px 45px;
+    gap: 25px;
+}
+
+/* --- Panel Stili (Genel) --- */
+.content-panel {
+    background-color: rgba(16, 12, 12, 0.95); /* Çok koyu gri/siyah tonu */
+    border: 1.5px solid #c83232; /* Belirgin kırmızı kenarlık */
+    border-radius: 12px; /* Daha yuvarlak köşeler */
+    box-shadow: 0 0 25px rgba(186, 12, 12, 0.35); /* Kırmızı parlama efekti */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    background-color: rgba(210, 32, 32, 0.2); /* Başlık arkası hafif kırmızı */
+    color: #c83232; /* Başlık kırmızı yazı */
+    padding: 12px 20px;
+    font-weight: 800;
+    font-size: 16px; /* Başlık büyütüldü */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid rgba(210, 32, 32, 0.3);
+}
+
+/* --- GÜNCELLEMELER PANELİ (İÇERİDEN BÜYÜTÜLDÜ) --- */
+.update-panel {
+    width: 320px; /* Panel genişliği aynı */
+}
+
+.update-panel .panel-body {
+    padding: 20px 22px; /* İç boşluklar artırıldı */
+}
+
+.update-item {
+    margin-bottom: 18px; /* Öğeler arası boşluk artırıldı */
+}
+
+.update-item:last-child {
+    margin-bottom: 0;
+}
+
+.update-title {
+    color: #c83232;
+    font-weight: 700;
+    font-size: 14px; /* Başlık yazısı büyütüldü */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.update-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px; /* İçerik yazısı büyütüldü */
+    line-height: 1.5; /* Daha rahat okunur satır aralığı */
+    margin: 6px 0 0 0;
+}
+
+/* --- YETKİLİ PANELİ (BÜTÜN RESİMLER DAİRELERİ KIRMIZI) --- */
+.staff-panel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.staff-panel {
+    width: 490px; /* Panel genişliği aynı */
+}
+
+.staff-panel .panel-body.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Sutun */
+    gap: 15px; /* Kartlar arası boşluk artırıldı */
+    padding: 20px;
+}
+
+.staff-member {
+    background-color: rgba(0, 0, 0, 0.5); /* Kart arka planı daha koyu */
+    border: 1px solid rgba(210, 32, 32, 0.2); /* Çok hafif kırmızı kenarlık */
+    border-radius: 10px;
+    padding: 12px 15px; /* Kart içi boşluk artırıldı */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.staff-member:hover {
+    background-color: rgba(210, 32, 32, 0.1); /* Mouse ile üzerine gelince parlama */
+}
+
+/* --- KESİN ÇÖZÜM: TÜM AVATARLARIN ETRAFI KIRMIZI --- */
+.avatar {
+    width: 44px; /* Resimler biraz büyütüldü */
+    height: 44px;
+    border-radius: 50%; /* Tam daire */
+    /* Eskiden rgba(255, 255, 255, 0.2) idi, şimdi saf kırmızı: */
+    border: 2.5px solid #c83232; /* Tüm avatarların kenarlığı kırmızı ve daha kalın */
+    box-shadow: 0 0 10px rgba(186, 12, 12, 0.5); /* Dairenin etrafına kırmızı parlama */
+    object-fit: cover;
+}
+
+/* 'Owner' veya başka bir sınıf için özel kırmızı ayarına gerek kalmadı, hepsi kırmızı. */
+
+.staff-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.staff-info .name {
+    font-size: 14px; /* İsim yazısı büyütüldü */
+    font-weight: 700;
+    color: white;
+}
+
+.staff-info .role {
+    font-size: 11px; /* Rol yazısı büyütüldü */
+    color: #bbb;
+    text-transform: capitalize;
+    margin-top: 3px;
+}
+
+/* Owner/Founder gibi önemli rolleri vurgulamak için kırmızı renk */
+.staff-info .owner-text {
+    color: #c83232;
+    font-weight: bold;
+}
+
+/* Developer veya başka roller için farklı renk (isteğe bağlı) */
+.staff-info .mod-text {
+    color: #32c832;
+}
+
+/* --- Sosyal Bar (Sosyal Medya Butonları) --- */
+.social-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px; /* Panelden uzaklık artırıldı */
+    gap: 10px;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 12px; /* Yazı boyutu artırıldı */
+    font-weight: 600;
+    padding: 8px 18px; /* Butonlar içeriden büyütüldü */
+    background-color: rgba(18, 14, 14, 0.95);
+    border: 1.5px solid rgba(210, 32, 32, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    border-color: rgba(210, 32, 32, 0.8);
+    background-color: rgba(210, 32, 32, 0.2);
+    transform: translateY(-2px); /* Hafif yukarı zıplama efekti */
+}
+
+.social-btn i {
+    font-size: 14px; /* İkon boyutu artırıldı */
+}
+
+/* Sosyal Medya Renkleri */
+.social-btn.discord i { color: #5865F2; }
+.social-btn.youtube i { color: #FF0000; }
+.social-btn.instagram i { color: #E1306C; }

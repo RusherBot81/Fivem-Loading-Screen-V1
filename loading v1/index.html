@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLine</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-container">
+        <!-- TAM EKRAN ARKA PLAN RESMİ -->
+        <div class="fullscreen-bg"></div>
+
+        <!-- Üst Bar: Sol Üst Logo ve İsim -->
+        <header class="top-bar">
+            <div class="header-logo">
+                <img src="images/small_logo.png" alt="Küçük Logo" />
+                <span class="server-name">CodLine Bots</span>
+            </div>
+        </header>
+
+        <!-- Orta Kısım: Büyük Logo -->
+        <div class="center-content">
+            <div class="large-logo-container">
+                <img src="images/large_logo_bg.png" alt="Büyük İstiklal RP Logo" class="large-logo" />
+            </div>
+        </div>
+
+        <!-- Alt Kısım: Güncellemeler ve Yetkili Ekibi -->
+        <footer class="bottom-content">
+            <!-- Güncellemeler Paneli -->
+            <div class="content-panel update-panel">
+                <div class="panel-header">GÜNCELLEMELER</div>
+                <div class="panel-body">
+                    <div class="update-item v1-0">
+                        <span class="update-title">V1.0 - AÇILIŞ #</span>
+                        <p class="update-text">CodeLine Bots'e hoş geldiniz! Mükemmel ekonomi, optimize sistemler ve kaliteli rol deneyimi sizi bekliyor.</p>
+                    </div>
+                    <div class="update-item illegal-system">
+                        <span class="update-title">ILLEGAL SİSTEMLER #</span>
+                        <p class="update-text">Ev soygunları, yepyeni uyuşturucu sistemleri ve tamamen gizli karaborsa entegre edildi.</p>
+                    </div>
+                    <div class="update-item optimization">
+                        <span class="update-title">OPTİMİZASYON #</span>
+                        <p class="update-text">Tüm scriptler güncellendi, FPS sorunları tamamen ortadan kaldırıldı. Stabil bir oyun keyfi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ Alt: Yetkili Ekibi -->
+            <div class="staff-panel-container">
+                <div class="content-panel staff-panel">
+                    <div class="panel-header">YETKİLİ EKİBİ</div>
+                    <div class="panel-body grid">
+                        <div class="staff-member">
+                            <img src="images/destek.png" alt="CodeLine" class="avatar owner" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role owner-text">Owner</span>
+                            </div>
+                        </div>
+                        <div class="staff-member">
+                            <img src="images/ses.png" alt="CodeLine" class="avatar" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role owner-text">Owner</span>
+                            </div>
+                        </div>
+                        <div class="staff-member">
+                            <img src="images/info.png" alt="CodeLine" class="avatar" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role owner-text">Owner</span>
+                            </div>
+                        </div>
+                        <div class="staff-member">
+                            <img src="images/komut.png" alt="CodeLine" class="avatar" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role">Founder</span>
+                            </div>
+                        </div>
+                        <div class="staff-member">
+                            <img src="images/sa.png" alt="CodeLine" class="avatar" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role">Developer</span>
+                            </div>
+                        </div>
+                        <div class="staff-member">
+                            <!-- 'naber .png' ismi 'naber.png' olarak düzeltildi -->
+                            <img src="images/naber.png" alt="CodeLine" class="avatar mod" />
+                            <div class="staff-info">
+                                <span class="name">CodeLine</span>
+                                <span class="role mod-text">?</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sosyal Medya Butonları -->
+                <div class="social-bar">
+                    <a href="DISCORD_LINKI" target="_blank" class="social-btn discord"><i class="fa-brands fa-discord"></i> Discord</a>
+                    <a href="YOUTUBE_LINKI" target="_blank" class="social-btn youtube"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="INSTAGRAM_LINKI" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Müzik Çalar (Fixlendi) -->
+    <audio id="loading-music" src="sound/music.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

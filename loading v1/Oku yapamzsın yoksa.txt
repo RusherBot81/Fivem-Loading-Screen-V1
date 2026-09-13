@@ -1,0 +1,1 @@
+Resim adları:CodeLine.png,destek.png,info.png,komut.png,large_logo_bg.png,naber.png,sa.png,ses.png,small_logo.png, Bunlar Resim adları images resimleri atın kuru ben sildim ordakileri Bide müzüzik var ben kendiminkini kaldırdım siz eklersiniz onunda adı bu music.mp3 olcak yoksa çalışmaz.
